@@ -9,6 +9,7 @@
         <methods>
           <include name="quitBrowser"/>
           <include name="back"/>
+          <include name="signIn"/>
           <include name="addnewuser"/>
           <include name="settingBrowser"/>
         </methods>
