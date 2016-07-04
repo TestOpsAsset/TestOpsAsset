@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="8949" started-at="2016-07-04T05:38:37Z" finished-at="2016-07-04T05:38:45Z">
+    <groups>
+    </groups>
+    <test name="test" duration-ms="8949" started-at="2016-07-04T05:38:37Z" finished-at="2016-07-04T05:38:45Z">
+      <class name="com.frontEndApp_Scripts.AddUser">
+        <test-method status="PASS" signature="settingBrowser(java.lang.String)[pri:0, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="settingBrowser" is-config="true" duration-ms="5853" started-at="2016-07-04T00:38:37Z" finished-at="2016-07-04T00:38:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- settingBrowser -->
+        <test-method status="PASS" signature="signIn()[pri:1, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="signIn" duration-ms="1523" started-at="2016-07-04T00:38:42Z" finished-at="2016-07-04T00:38:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- signIn -->
+        <test-method status="PASS" signature="back()[pri:0, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="back" is-config="true" duration-ms="0" started-at="2016-07-04T00:38:44Z" finished-at="2016-07-04T00:38:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- back -->
+        <test-method status="PASS" signature="addnewuser()[pri:2, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="addnewuser" duration-ms="1526" started-at="2016-07-04T00:38:44Z" finished-at="2016-07-04T00:38:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addnewuser -->
+        <test-method status="PASS" signature="back()[pri:0, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="back" is-config="true" duration-ms="0" started-at="2016-07-04T00:38:45Z" finished-at="2016-07-04T00:38:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- back -->
+        <test-method status="PASS" signature="quitBrowser()[pri:0, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="quitBrowser" is-config="true" duration-ms="32" started-at="2016-07-04T00:38:45Z" finished-at="2016-07-04T00:38:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quitBrowser -->
+        <test-method status="PASS" signature="close()[pri:0, instance:com.frontEndApp_Scripts.AddUser@28feb3fa]" name="close" is-config="true" duration-ms="862" started-at="2016-07-04T00:38:46Z" finished-at="2016-07-04T00:38:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- com.frontEndApp_Scripts.AddUser -->
+    </test> <!-- test -->
+  </suite> <!-- Suite -->
+</testng-results>
