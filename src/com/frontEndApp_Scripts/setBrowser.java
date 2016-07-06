@@ -19,7 +19,7 @@ public class setBrowser {
 	@BeforeTest
 	@Parameters("browser")
 	public void settingBrowser(String browser){
-		
+		// Since version 2.50, firefox will require WebDriver (Geckodriver) from Marionette
 		if (browser.equalsIgnoreCase("Firefox")){
 			driver = new FirefoxDriver();
 		}
