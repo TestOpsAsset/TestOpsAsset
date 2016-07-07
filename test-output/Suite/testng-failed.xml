@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="browser" value="Chrome"/>
+  <parameter name="browser" value="Internet Explorer"/>
   <test name="test(failed)">
-    <parameter name="browser" value="Chrome"/>
+    <parameter name="browser" value="Internet Explorer"/>
     <classes>
       <class name="com.frontEndApp_Scripts.AddUser">
         <methods>
-          <include name="quitBrowser"/>
-          <include name="back"/>
           <include name="signIn"/>
           <include name="addnewuser"/>
           <include name="settingBrowser"/>

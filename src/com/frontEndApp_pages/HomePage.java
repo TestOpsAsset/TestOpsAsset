@@ -42,6 +42,8 @@ public class HomePage {
 		PageFactory.initElements(driver, this);	
 	}
 	
+	
+	// Actions that will be executed using above values
 	public void logIn(String user, String pwd){
 		accountMenu.click();
 		signIn.click();

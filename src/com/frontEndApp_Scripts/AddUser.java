@@ -12,8 +12,6 @@ public class AddUser extends setBrowser{
 	public void signIn(){
 		HomePage hp =  new HomePage(driver);
 		hp.logIn(data.User, data.pwd);
-		
-	
 	}
 		
 	@Test (priority=2)
@@ -23,4 +21,6 @@ public class AddUser extends setBrowser{
 		String emailtemp = data.new_FName +"."+ data.new_LName + serial +"@accenture.com";
 		user.insertData(data.new_User + serial, data.new_FName + serial,data.new_LName,emailtemp, serial);
 	}
+	
+	
 }

@@ -8,7 +8,6 @@ public class loginProcess extends setBrowser{
 	@Test
 	public void signIn(){
 		HomePage hp =  new HomePage(driver);
-		
 		hp.logIn(data.User, data.pwd);
 	}
 }
