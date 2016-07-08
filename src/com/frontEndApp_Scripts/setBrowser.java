@@ -1,5 +1,10 @@
 package com.frontEndApp_Scripts;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -18,7 +23,7 @@ public class setBrowser {
 	
 	@BeforeTest
 	@Parameters("browser")
-	public void settingBrowser(String browser){
+	public void settingBrowser(String browser) throws IOException{
 		// Since version 2.50, firefox will require WebDriver (Geckodriver) from Marionette
 		if (browser.equalsIgnoreCase("Firefox")){
 			driver = new FirefoxDriver();
@@ -31,10 +36,19 @@ public class setBrowser {
 			System.setProperty(data.IE1, data.IE2 );
 			driver = new InternetExplorerDriver();
 		}
-				
-				
+		 
+		/*  Process to read objRepo.properties
+		File src = new File("objRepo.properties");
+		FileInputStream f = new FileInputStream(src);
+		Properties prop = new Properties();
+		prop.load(f);
+		
+		driver.findElement();
+		*/
+		
+		
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(data.appURL);
 			
 			System.out.println("BeforeTest annotation has been completed - Setting up browser complete");

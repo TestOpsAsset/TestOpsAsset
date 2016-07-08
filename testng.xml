@@ -2,9 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test name="test">
-  	<parameter name="browser" value="Internet Explorer"></parameter>
+  	<parameter name="browser" value="Chrome"></parameter>
     <classes>
-      <class name="com.frontEndApp_Scripts.AddUser"/>
+      <!--  <class name="com.frontEndApp_Scripts.AddUser"/> -->
+      <class name="com.frontEndApp_Scripts.MainProcess"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

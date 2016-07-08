@@ -53,7 +53,8 @@ public class NewUserPage {
 	public NewUserPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		System.out.println("this is the contructor of NewUserPage");
+		System.out.println("--> This is the contructor of NewUserPage");
+		System.out.println("---------------------------------------------");
 	}
 	
 	public void insertData(String login, String Fname, String Lname, String tempEmail, int role){
@@ -77,11 +78,10 @@ public class NewUserPage {
 				//driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[2]/div[7]/select/option[2]")).click(); 
 			}	
 			savebutton.click();
-					
 			String actual= driver.findElement(By.xpath("html/body/div[3]/div[1]/div/jhi-alert/div/div/div/div/pre")).getText();
-			System.out.println("actual result: " + actual);
+			System.out.println("Actual result: " + actual);
 			String expected = "A user is created with identifier " + login;
-			System.out.println("expected result: " + expected);
+			System.out.println("Expected result: " + expected);
 			Assert.assertEquals(expected, actual);
 					
 		}
