@@ -8,7 +8,6 @@
       <class name="com.frontEndApp_Scripts.MainProcess">
         <methods>
           <include name="quitBrowser"/>
-          <include name="signIn"/>
           <include name="back"/>
           <include name="Password"/>
           <include name="settingBrowser"/>

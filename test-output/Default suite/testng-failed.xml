@@ -5,6 +5,8 @@
     <classes>
       <class name="com.frontEndApp_Scripts.MainProcess">
         <methods>
+          <include name="addnewuser"/>
+          <include name="listofUsers"/>
           <include name="signIn"/>
           <include name="Password"/>
         </methods>

@@ -1,10 +1,9 @@
 package com.frontEndApp_Scripts;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
+
 import java.io.IOException;
-import java.util.Properties;
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -37,15 +36,6 @@ public class setBrowser {
 			driver = new InternetExplorerDriver();
 		}
 		 
-		/*  Process to read objRepo.properties
-		File src = new File("objRepo.properties");
-		FileInputStream f = new FileInputStream(src);
-		Properties prop = new Properties();
-		prop.load(f);
-		
-		driver.findElement();
-		*/
-		
 		
 			driver.manage().window().maximize();
 			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

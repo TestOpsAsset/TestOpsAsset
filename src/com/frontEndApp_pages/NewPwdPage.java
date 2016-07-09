@@ -1,5 +1,7 @@
 package com.frontEndApp_pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,7 +49,10 @@ public class NewPwdPage {
 		newPwd.sendKeys(data.newpwd);
 		confirmPwd.sendKeys(data.newpwd);
 		savebutton.click();
+		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS);
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div/div[1]/strong")).getText();
+		System.out.println("Actual message: " + actual);
+		System.out.println("-------------------------------------");
 		Assert.assertEquals(actual, "Password changed!");
 		}
 
