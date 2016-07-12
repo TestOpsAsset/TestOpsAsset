@@ -13,7 +13,7 @@ import com.frontEndApp_pages.NewUserPage;
 
 public class MainProcess extends setBrowser{
 
-	@Test (priority=1) ///checking priority
+	@Test (priority=1)
 	public void signIn(){
 		HomePage hp = new HomePage(driver);
 		hp.logIn(data.User,  data.pwd);
