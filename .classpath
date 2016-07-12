@@ -2,6 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/selenium-java-2.53.0.jar" sourcepath="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/selenium-java-2.53.0.jar"/>
+	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/selenium-java-2.53.0-srcs.jar"/>
 	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/libs/apache-mime4j-0.6.jar"/>
 	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/libs/bsh-2.0b4.jar"/>
 	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/libs/cglib-nodep-2.1_3.jar"/>
@@ -23,7 +25,5 @@
 	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/libs/netty-3.5.7.Final.jar"/>
 	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/libs/phantomjsdriver-1.2.1.jar"/>
 	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/libs/testng-6.9.9.jar"/>
-	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/selenium-java-2.53.0.jar" sourcepath="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/selenium-java-2.53.0.jar"/>
-	<classpathentry kind="lib" path="G:/Trainings/Eclipse projects/Selenium/selenium-2.53.0/selenium-java-2.53.0-srcs.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
