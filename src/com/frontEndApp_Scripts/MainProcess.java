@@ -13,7 +13,7 @@ import com.frontEndApp_pages.NewUserPage;
 
 public class MainProcess extends setBrowser{
 
-	@Test (priority=1)
+	@Test (priority=1) ///checking priority
 	public void signIn(){
 		HomePage hp = new HomePage(driver);
 		hp.logIn(data.User,  data.pwd);
@@ -28,7 +28,7 @@ public class MainProcess extends setBrowser{
 	}
 	
 	@Test (priority=3)
-	public void Password(){
+	public void newpassword(){
 		NewPwdPage cp = new NewPwdPage(driver);
 		cp.changePassword();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

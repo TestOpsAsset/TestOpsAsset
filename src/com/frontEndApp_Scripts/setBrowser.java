@@ -1,7 +1,5 @@
 package com.frontEndApp_Scripts;
 
-
-
 import java.io.IOException;
 
 import java.util.concurrent.TimeUnit;
@@ -35,7 +33,6 @@ public class setBrowser {
 			System.setProperty(data.IE1, data.IE2 );
 			driver = new InternetExplorerDriver();
 		}
-		 
 		
 			driver.manage().window().maximize();
 			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -46,8 +43,7 @@ public class setBrowser {
 			System.out.println("-----------------------------------------------------------------------");
 	
 	}
-	
-	
+		
 	@AfterMethod
 	public void back(){
 		//System.out.println("AfterMethod method");
@@ -55,14 +51,10 @@ public class setBrowser {
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
 		Assert.assertEquals("You are logged in as user \"admin\"." , actual);
 		System.out.println(actual);*/
-		
 	}
 	
 	@AfterTest
-	public void quitBrowser(){
-		//System.out.println("AfterTest method");
-		/*
-		driver.quit();*/	
+	public void quitBrowser(){	
 		driver.findElement(By.xpath("html/body/div[2]/nav/div/div[2]/ul/li[1]/a"));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
