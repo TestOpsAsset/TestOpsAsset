@@ -15,7 +15,7 @@ public class HomePage {
 	private  WebDriver driver;
 	
 	
-	@FindBy(id="account-menu")
+	@FindBy(className ="dropdown-toggle")
 	@CacheLookup
 	private WebElement accountMenu;
 	

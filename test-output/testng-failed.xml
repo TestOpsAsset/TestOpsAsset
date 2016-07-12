@@ -5,14 +5,14 @@
   <test name="test(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.frontEndApp_Scripts.MainProcess">
+      <class name="com.frontEndApp_Scripts.AdminProcess">
         <methods>
           <include name="quitBrowser"/>
           <include name="back"/>
-          <include name="Password"/>
+          <include name="login"/>
           <include name="settingBrowser"/>
         </methods>
-      </class> <!-- com.frontEndApp_Scripts.MainProcess -->
+      </class> <!-- com.frontEndApp_Scripts.AdminProcess -->
     </classes>
   </test> <!-- test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
