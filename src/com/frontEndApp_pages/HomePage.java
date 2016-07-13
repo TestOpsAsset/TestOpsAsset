@@ -46,7 +46,7 @@ public class HomePage {
 	
 	// Actions that will be executed using above values
 	public void logIn(String user, String pwd){
-		System.out.println("hello this is login method");
+		
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 		accountMenu.click();
 		signIn.click();
