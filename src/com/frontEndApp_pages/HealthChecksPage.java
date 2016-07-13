@@ -34,14 +34,20 @@ public class HealthChecksPage {
 	}
 	
 	public void healtCheck(int rowvalue){
-		
+		System.out.println("we have entered to Health method");
 		adminMenu.click();
+		System.out.println("adminMenu complete");
 		healthMenu.click();
+		System.out.println("healthMenu complete");
 		refreshButton.click();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		System.out.println("refreshbutton complete");
+		//driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 		String rowpath=".//*[@id='healthCheck']/tbody/tr[";
+		System.out.println("table xpath complete");
 		String tvalue, temp="";
 		int x=0;
+		System.out.println("assignement complete");
+		System.out.println("starting for loop");
 		for (int j=1; j<= rowvalue; j++){
 			tvalue= driver.findElement(By.xpath(rowpath + j + "]/td[1]/span")).getText();
 				switch (tvalue){
@@ -57,7 +63,7 @@ public class HealthChecksPage {
 								
 				default: break;
 				}
-			System.out.println("Health Checks table: " + tvalue + " -> Status: " + temp);
+			System.out.println("Row: " + j + " -> Health Checks table: " + tvalue + " -> Status: " + temp);
 		}
 				
 		Assert.assertEquals(3, x);
