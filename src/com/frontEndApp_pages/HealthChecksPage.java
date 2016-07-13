@@ -39,24 +39,25 @@ public class HealthChecksPage {
 		healthMenu.click();
 		refreshButton.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		boolean status = false;
 		String rowpath=".//*[@id='healthCheck']/tbody/tr[";
-		String tvalue;
+		String tvalue, temp="";
 		int x=0;
 		for (int j=1; j<= rowvalue; j++){
 			tvalue= driver.findElement(By.xpath(rowpath + j + "]/td[1]/span")).getText();
 				switch (tvalue){
-				case "Elasticsearch": if (driver.findElement(By.xpath(rowpath + j + "]/td[2]/span")).getText().equals("UP"))
-												x++;
-				case "DiskSpace" 	: if (driver.findElement(By.xpath(rowpath + j + "]/td[2]/span")).getText().equals("UP"))
-												x++;
-				case "Db" 			: if (driver.findElement(By.xpath(rowpath + j + "]/td[2]/span")).getText().equals("UP"))
-												x++;
-				break;
-				
+				case "Elasticsearch": 
+					if ((temp = driver.findElement(By.xpath(rowpath + j + "]/td[2]/span")).getText()).equals("UP")){x++;}
+					break;
+				case "DiskSpace" 	: 
+					if ((temp = driver.findElement(By.xpath(rowpath + j + "]/td[2]/span")).getText()).equals("UP")){x++;}
+					break;			
+				case "Db" 			: 
+					if ((temp = driver.findElement(By.xpath(rowpath + j + "]/td[2]/span")).getText()).equals("UP")){x++;}
+					break;
+								
 				default: break;
 				}
-			System.out.println("Health Checks table: " + tvalue + " has been verified");
+			System.out.println("Health Checks table: " + tvalue + " -> Status: " + temp);
 		}
 				
 		Assert.assertEquals(3, x);

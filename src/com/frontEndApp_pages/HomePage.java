@@ -15,7 +15,7 @@ public class HomePage {
 	private  WebDriver driver;
 	
 	
-	@FindBy(className ="dropdown-toggle")
+	@FindBy (id="account-menu")
 	@CacheLookup
 	private WebElement accountMenu;
 	
@@ -39,12 +39,15 @@ public class HomePage {
 	//---- Constructor declaration
 	public HomePage (WebDriver driver){
 		this.driver = driver;
-		PageFactory.initElements(driver, this);	
+		PageFactory.initElements(driver, this);
+		
 	}
 	
 	
 	// Actions that will be executed using above values
 	public void logIn(String user, String pwd){
+		System.out.println("hello this is login method");
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 		accountMenu.click();
 		signIn.click();
 		username.sendKeys(user);
