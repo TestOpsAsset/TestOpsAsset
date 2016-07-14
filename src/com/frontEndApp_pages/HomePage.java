@@ -56,7 +56,6 @@ public class HomePage {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
 		System.out.println(actual);
-		System.out.println("--------------------------------------------");
 		Assert.assertEquals("You are logged in as user \"admin\"." , actual);
 	}
 	

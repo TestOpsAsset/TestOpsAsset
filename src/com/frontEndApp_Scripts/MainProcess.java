@@ -17,6 +17,7 @@ public class MainProcess extends setBrowser{
 	public void signIn(){
 		HomePage hp = new HomePage(driver);
 		hp.logIn(data.User,  data.pwd);
+		System.out.println("--------------------------------------------");
 	}
 	
 	@Test (priority=2)

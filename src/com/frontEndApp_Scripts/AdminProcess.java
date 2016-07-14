@@ -4,13 +4,15 @@ import org.testng.annotations.Test;
 
 import com.frontEndApp_pages.HealthChecksPage;
 import com.frontEndApp_pages.HomePage;
+import com.frontEndApp_pages.MetricsCheckPage;
 
 public class AdminProcess extends setBrowser {
 
 	@Test (priority = 1)
 	public void login(){
 		HomePage hp = new HomePage(driver);
-		hp.logIn(data.User, data.pwd);			
+		hp.logIn(data.User, data.pwd);	
+		System.out.println("-------------------------------------------");
 	}
 	
 	@Test (priority = 2)
@@ -21,6 +23,11 @@ public class AdminProcess extends setBrowser {
 		System.out.println("-------------------------------------------");
 	}
 	
-	
+	@Test (priority = 3)
+	public void MetricsCheck(){
+		MetricsCheckPage mc = new MetricsCheckPage(driver);
+		mc.checkMemotyStatus(30);
+		System.out.println("-------------------------------------------");
+	}
 	
 }
