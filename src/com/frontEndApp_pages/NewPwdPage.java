@@ -42,7 +42,7 @@ public class NewPwdPage {
 		PageFactory.initElements(driver,  this);
 	}
 
-	public void changePassword(){
+	public String changePassword(){
 		accountMenu.click();
 		pwdMenu.click();
 		System.out.println("--> This is change password method");
@@ -51,9 +51,7 @@ public class NewPwdPage {
 		savebutton.click();
 		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS);
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div/div[1]/strong")).getText();
-		System.out.println("Actual message: " + actual);
-		System.out.println("-------------------------------------");
-		Assert.assertEquals(actual, "Password changed!");
+		return actual;
 		}
 
 

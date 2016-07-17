@@ -45,7 +45,7 @@ public class HomePage {
 	
 	
 	// Actions that will be executed using above values
-	public void logIn(String user, String pwd){
+	public String logIn(String user, String pwd){
 		
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
 		accountMenu.click();
@@ -55,8 +55,8 @@ public class HomePage {
 		signInButton.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
-		System.out.println(actual);
-		Assert.assertEquals("You are logged in as user \"admin\"." , actual);
+		//System.out.println(actual);
+		return actual;  // The actual value will be send back to the method who consumes logIn method
 	}
 	
 	

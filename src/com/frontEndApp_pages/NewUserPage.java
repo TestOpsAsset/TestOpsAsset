@@ -1,5 +1,7 @@
 package com.frontEndApp_pages;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,16 +50,13 @@ public class NewUserPage {
 	@CacheLookup
 	private WebElement savebutton;
 		
-		
 	 // --- Constructor declaration
 	public NewUserPage(WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		System.out.println("--> This is the contructor of NewUserPage");
-		System.out.println("---------------------------------------------");
 	}
 	
-	public void insertData(String login, String Fname, String Lname, String tempEmail, int role){
+	public String insertData(String login, String Fname, String Lname, String tempEmail, int role){
 			mainMenu.click();
 			userMenu.click();
 			createUser.click();
@@ -65,25 +64,20 @@ public class NewUserPage {
 			txtFname.sendKeys(Fname);
 			txtLname.sendKeys(Lname);
 			txtemail.sendKeys(tempEmail);
-			// UserRole will be assigned based on the below calculation
 			
+			// UserRole will be assigned based on the below calculation
 			Select auth = new Select(profiles);
 			if (role%2 != 0){
 				// Selecting USER ROLE
-				auth.selectByVisibleText("ROLE_USER");
-				//driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[2]/div[7]/select/option[1]")).click(); 
+				auth.selectByVisibleText("ROLE_USER"); 
 			}else{
 				// Selecting ADMIN ROLE
-				auth.selectByVisibleText("ROLE_USER");
-				//driver.findElement(By.xpath("/html/body/div[1]/div/div/form/div[2]/div[7]/select/option[2]")).click(); 
+				auth.selectByVisibleText("ROLE_ADMIN");
 			}	
 			savebutton.click();
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			String actual= driver.findElement(By.xpath("html/body/div[3]/div[1]/div/jhi-alert/div/div/div/div/pre")).getText();
-			System.out.println("Actual result: " + actual);
-			String expected = "A user is created with identifier " + login;
-			System.out.println("Expected result: " + expected);
-			Assert.assertEquals(expected, actual);
-					
+			return actual;					
 		}
 }
 

@@ -30,7 +30,9 @@ public class ListofUsersPage {
 	
 	
 	// -- Execution Method, this will be called by MainProcess class
-	public void createListofUsers(){
+	public Boolean createListofUsers(){
+		Boolean actual = false;
+		
 		adminMenu.click();
 		usersMenu.click();
 		
@@ -59,10 +61,10 @@ public class ListofUsersPage {
 			}while (userStatus != "");
 		}
 		catch (Exception e){
-			System.out.println("List of users completed");
+			 actual = true;
 		}
-				
-		System.out.println("-------------------------------------");
+		
+		return actual;
 		
 	}
 	
