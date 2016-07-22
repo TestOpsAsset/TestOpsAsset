@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -23,7 +24,9 @@ public class setBrowser {
 	public void settingBrowser(String browser) throws IOException{
 		// Since version 2.50, firefox will require WebDriver (Geckodriver) from Marionette
 		if (browser.equalsIgnoreCase("Firefox")){
-			driver = new FirefoxDriver();
+			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			capabilities.setCapability("marionette", true);
+			driver = new FirefoxDriver(capabilities);	
 		}
 		else if (browser.equalsIgnoreCase("Chrome")){
 			System.setProperty(data.Chrome1, data.Chrome2);
