@@ -21,7 +21,7 @@ public class setBrowser {
 	
 	@BeforeTest
 	@Parameters("browser")
-	public void settingBrowser(String browser) throws IOException{
+	public void settingBrowser(String browser) throws IOException, InterruptedException{
 		// Since version 2.50, firefox will require WebDriver (Geckodriver) from Marionette
 		if (browser.equalsIgnoreCase("Firefox")){
 			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
@@ -34,12 +34,15 @@ public class setBrowser {
 		}
 		else if (browser.equalsIgnoreCase("Internet Explorer")){
 			System.setProperty(data.IE1, data.IE2 );
-			driver = new InternetExplorerDriver();
+			DesiredCapabilities capabilities =new DesiredCapabilities();
+					capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+			driver = new InternetExplorerDriver(capabilities);
 		}
 		
 			driver.manage().window().maximize();
 			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get(data.appURL);
+			Thread.sleep(3000);
 			
 			System.out.println("BeforeTest annotation has been completed - Setting up browser complete");
 			System.out.println("We are using: "+ browser + " browser");

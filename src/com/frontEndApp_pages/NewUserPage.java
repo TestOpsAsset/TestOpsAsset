@@ -9,7 +9,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class NewUserPage {
 	private  WebDriver driver;

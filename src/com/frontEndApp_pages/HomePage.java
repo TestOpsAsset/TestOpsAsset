@@ -9,11 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 
 public class HomePage {
 	private  WebDriver driver;
-	
 	
 	@FindBy (id="account-menu")
 	@CacheLookup
@@ -35,15 +33,13 @@ public class HomePage {
 	@CacheLookup
 	private WebElement signInButton;
 	
-	
 	//---- Constructor declaration
 	public HomePage (WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		
-	}
-	
-	
+	}	
+		
 	// Actions that will be executed using above values
 	public String logIn(String user, String pwd){
 		
@@ -58,6 +54,4 @@ public class HomePage {
 		//System.out.println(actual);
 		return actual;  // The actual value will be send back to the method who consumes logIn method
 	}
-	
-	
 }

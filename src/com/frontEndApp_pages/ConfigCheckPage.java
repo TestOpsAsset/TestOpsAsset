@@ -2,7 +2,6 @@ package com.frontEndApp_pages;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -13,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ConfigCheckPage {
 private WebDriver driver;
 
-@FindBy (id="admin-menu")
+@FindBy (xpath=".//*[@id='account-menu']/span/span[2]")
 @CacheLookup
 private WebElement adminMenu;
 
