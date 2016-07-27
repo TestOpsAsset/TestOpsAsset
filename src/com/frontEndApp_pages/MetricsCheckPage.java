@@ -43,7 +43,7 @@ public class MetricsCheckPage {
 	public void checkMemotyStatus(int topPercentage){
 		adminMenu.click();
 		metricsMenu.click();
-		refreshButton.click();
+		//refreshButton.click();
 		driver.manage().timeouts().implicitlyWait(1,  TimeUnit.MINUTES);
 		///----
 		boolean actual = true;
@@ -60,7 +60,7 @@ public class MetricsCheckPage {
 	
 	public int getNumber(String sValue){
 		int vInteger = 0;
-		if (sValue.length()<3) {
+		if (sValue.length() < 3) {
 			vInteger = Integer.parseInt(sValue.substring(0,3));
 		}else{
 			vInteger = Integer.parseInt(sValue.substring(0,2));

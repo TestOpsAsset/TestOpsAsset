@@ -49,7 +49,7 @@ public class NewPwdPage {
 		newPwd.sendKeys(data.newpwd);
 		confirmPwd.sendKeys(data.newpwd);
 		savebutton.click();
-		driver.manage().timeouts().implicitlyWait(30,  TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div/div[1]/strong")).getText();
 		return actual;
 		}

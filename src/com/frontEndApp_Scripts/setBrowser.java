@@ -10,23 +10,32 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+
+import com.frontEndApp_pages.HomePage;
+
+
+
 
 public class setBrowser {
 	WebDriver driver;
 	
-	@BeforeTest
+	@BeforeClass
 	@Parameters("browser")
 	public void settingBrowser(String browser) throws IOException, InterruptedException{
 		// Since version 2.50, firefox will require WebDriver (Geckodriver) from Marionette
 		if (browser.equalsIgnoreCase("Firefox")){
-			DesiredCapabilities capabilities = DesiredCapabilities.firefox();
-			capabilities.setCapability("marionette", true);
-			driver = new FirefoxDriver(capabilities);	
+			//DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+			//capabilities.setCapability("marionette", true);
+			//driver = new FirefoxDriver(capabilities);
+			driver = new FirefoxDriver();
 		}
 		else if (browser.equalsIgnoreCase("Chrome")){
 			System.setProperty(data.Chrome1, data.Chrome2);
@@ -35,8 +44,9 @@ public class setBrowser {
 		else if (browser.equalsIgnoreCase("Internet Explorer")){
 			System.setProperty(data.IE1, data.IE2 );
 			DesiredCapabilities capabilities =new DesiredCapabilities();
-					capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+				capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 			driver = new InternetExplorerDriver(capabilities);
+			driver = new InternetExplorerDriver();
 		}
 		
 			driver.manage().window().maximize();
@@ -49,17 +59,21 @@ public class setBrowser {
 			System.out.println("-----------------------------------------------------------------------");
 	
 	}
+	
+	@AfterClass
+		public void outofclass(){
+		System.out.println("this is AfterClass annotation");
+		driver.findElement(By.xpath("html/body/div[2]/nav/div/div[2]/ul/li[1]/a/span[2]")).click();
+		HomePage hpOut = new HomePage(driver);
+		String actual = hpOut.logOutApp();
+		System.out.println(actual);
+		Assert.assertEquals(actual, "Register a new account");
+		System.out.println("Closing browser instance.");
+		driver.quit();		
 		
-	@AfterMethod
-	public void back(){
-		//System.out.println("AfterMethod method");
-		/*driver.findElement(By.xpath("html/body/div[2]/nav/div/div[2]/ul/li[1]/a/span[2]")).click();
-		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
-		Assert.assertEquals("You are logged in as user \"admin\"." , actual);
-		System.out.println(actual);*/
 	}
 	
-	@AfterTest
+	/*@AfterTest
 	public void quitBrowser(){	
 		driver.findElement(By.xpath("html/body/div[2]/nav/div/div[2]/ul/li[1]/a"));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -69,5 +83,5 @@ public class setBrowser {
 		System.out.println("Closing browser instance.");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.quit();
-	}
+	}*/
 }

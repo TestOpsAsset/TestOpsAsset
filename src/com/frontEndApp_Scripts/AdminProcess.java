@@ -16,7 +16,7 @@ public class AdminProcess extends setBrowser {
 		Assert.assertEquals("You are logged in as user \"admin\"." , hp.logIn(data.User, data.pwd));
 		System.out.println("-------------------------------------------");
 	}
-	/*
+	
 	@Test (priority = 2)
 	public void HealthChecks(){
 		System.out.println("we have entered to Health method");
@@ -26,15 +26,15 @@ public class AdminProcess extends setBrowser {
 		System.out.println("-------------------------------------------");
 	}
 	
-	/*@Test (priority = 3)
+	@Test (priority = 3)
 	public void MetricsCheck(){
 		MetricsCheckPage mc = new MetricsCheckPage(driver);
 		mc.checkMemotyStatus(30);
 		//Assertion should be here
 		System.out.println("-------------------------------------------");
 	}
-	*/
 	
+	/*
 	@Test (priority = 4)
 	public void ConfigCheck(){
 		ConfigCheckPage cp = new ConfigCheckPage(driver);
@@ -43,7 +43,7 @@ public class AdminProcess extends setBrowser {
 		
 		System.out.println("-------------------------------------------");
 		
-	}
+	}*/
 	
 	
 	

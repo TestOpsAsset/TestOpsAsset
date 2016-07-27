@@ -33,6 +33,10 @@ public class HomePage {
 	@CacheLookup
 	private WebElement signInButton;
 	
+	@FindBy (id="logout")
+	@CacheLookup
+	private WebElement logOut;
+	
 	//---- Constructor declaration
 	public HomePage (WebDriver driver){
 		this.driver = driver;
@@ -40,7 +44,10 @@ public class HomePage {
 		
 	}	
 		
-	// Actions that will be executed using above values
+	/*
+	 * Actions that will be executed using above values
+	 */
+	
 	public String logIn(String user, String pwd){
 		
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
@@ -53,5 +60,14 @@ public class HomePage {
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
 		//System.out.println(actual);
 		return actual;  // The actual value will be send back to the method who consumes logIn method
+	}
+	
+	public String logOutApp(){
+		
+		accountMenu.click();
+		logOut.click();
+		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div[2]/a")).getText();
+		return actual;
+		
 	}
 }

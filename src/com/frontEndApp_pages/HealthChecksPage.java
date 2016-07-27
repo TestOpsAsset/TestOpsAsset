@@ -1,6 +1,8 @@
 package com.frontEndApp_pages;
 
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +23,7 @@ public class HealthChecksPage {
 	@CacheLookup
 	private WebElement healthMenu;
 	
-	@FindBy(xpath= "html/body/div[3]/div[1]/div/p/button")
+	@FindBy(css  =".btn.btn-primary")
 	@CacheLookup
 	private WebElement refreshButton;
 	
@@ -35,8 +37,8 @@ public class HealthChecksPage {
 	public void healtCheck(int rowvalue){
 		adminMenu.click();
 		healthMenu.click();
-		refreshButton.click();
-		//driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		//refreshButton.click();
 		String rowpath=".//*[@id='healthCheck']/tbody/tr[";
 		String tvalue, temp="";
 		int x=0;

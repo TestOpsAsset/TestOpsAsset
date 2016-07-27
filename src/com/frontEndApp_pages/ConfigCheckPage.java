@@ -2,6 +2,7 @@ package com.frontEndApp_pages;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -12,17 +13,13 @@ import org.openqa.selenium.support.PageFactory;
 public class ConfigCheckPage {
 private WebDriver driver;
 
-@FindBy (xpath=".//*[@id='account-menu']/span/span[2]")
+@FindBy (id = "admin-menu")
 @CacheLookup
 private WebElement adminMenu;
 
 @FindBy (css = ".active>a>span")
 @CacheLookup
 private WebElement configMenu;
-
-@FindBy (xpath ="html/body/div[3]/div[1]/div/input")
-@CacheLookup
-private WebElement filter;
 
 @FindBy (css=".break.ng-binding")
 @CacheLookup
@@ -42,6 +39,7 @@ public boolean checkLocalServerPort(String sValue){
 	boolean flag;
 	adminMenu.click();
 	configMenu.click();
+	WebElement filter = driver.findElement(By.cssSelector(".form-control.ng-pristine.ng-untouched.ng-valid.ng-empty"));
 	filter.sendKeys(sValue); //it doesn't require click event, search begins as you enter values
 	driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
 	if ((localserverport.getText().equals("8080")) && (localserver.getText().equals("local.server.port"))){
