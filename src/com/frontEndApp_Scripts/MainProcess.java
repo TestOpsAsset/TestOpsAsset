@@ -32,7 +32,7 @@ public class MainProcess extends setBrowser{
 		Assert.assertEquals(actual, expected);
 	}
 	@Test (priority=3)
-	public void newpassword(){
+	public void newpassword() throws InterruptedException{
 		NewPwdPage cp = new NewPwdPage(driver);
 		String actual = cp.changePassword();
 		Assert.assertEquals(actual, "Password changed!");

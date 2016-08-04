@@ -27,9 +27,9 @@ public class AdminProcess extends setBrowser {
 	}
 	
 	@Test (priority = 3)
-	public void MetricsCheck(){
+	public void MetricsCheck() throws InterruptedException{
 		MetricsCheckPage mc = new MetricsCheckPage(driver);
-		mc.checkMemotyStatus(30);
+		mc.checkMemotyStatus(40);
 		//Assertion should be here
 		System.out.println("-------------------------------------------");
 	}

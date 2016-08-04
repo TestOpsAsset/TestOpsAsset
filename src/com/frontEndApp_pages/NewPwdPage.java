@@ -42,14 +42,15 @@ public class NewPwdPage {
 		PageFactory.initElements(driver,  this);
 	}
 
-	public String changePassword(){
+	public String changePassword() throws InterruptedException{
 		accountMenu.click();
 		pwdMenu.click();
 		System.out.println("--> This is change password method");
 		newPwd.sendKeys(data.newpwd);
 		confirmPwd.sendKeys(data.newpwd);
 		savebutton.click();
-		driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		//driver.manage().timeouts().implicitlyWait(1, TimeUnit.MINUTES);
+		Thread.sleep(3000);
 		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div/div[1]/strong")).getText();
 		return actual;
 		}

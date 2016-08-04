@@ -49,9 +49,9 @@ public class setBrowser {
 			driver = new InternetExplorerDriver();
 		}
 		
-			driver.manage().window().maximize();
-			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			
 			driver.get(data.appURL);
+			driver.manage().window().maximize();
 			Thread.sleep(3000);
 			
 			System.out.println("BeforeTest annotation has been completed - Setting up browser complete");
@@ -62,13 +62,13 @@ public class setBrowser {
 	
 	@AfterClass
 		public void outofclass(){
-		System.out.println("this is AfterClass annotation");
 		driver.findElement(By.xpath("html/body/div[2]/nav/div/div[2]/ul/li[1]/a/span[2]")).click();
 		HomePage hpOut = new HomePage(driver);
 		String actual = hpOut.logOutApp();
 		System.out.println(actual);
 		Assert.assertEquals(actual, "Register a new account");
 		System.out.println("Closing browser instance.");
+		System.out.println("_________________________________________________________________");
 		driver.quit();		
 		
 	}

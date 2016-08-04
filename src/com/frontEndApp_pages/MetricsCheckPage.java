@@ -40,15 +40,17 @@ public class MetricsCheckPage {
 	}
 	
 	// Actions
-	public void checkMemotyStatus(int topPercentage){
+	public void checkMemotyStatus(int topPercentage) throws InterruptedException{
 		adminMenu.click();
 		metricsMenu.click();
 		//refreshButton.click();
 		driver.manage().timeouts().implicitlyWait(1,  TimeUnit.MINUTES);
+		Thread.sleep(5000);
 		///----
 		boolean actual = true;
 		if (getNumber(totalMemory.getText()) > topPercentage){
 			actual = false;
+			System.out.println(totalMemory.getText());
 		}else if (getNumber(heapMemory.getText()) > topPercentage){
 				actual = false;
 		}
