@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
  
 public class HomePage {
 	private  WebDriver driver;
-	
+	// this is the first comment in the class
 	@FindBy (id="account-menu")
 	@CacheLookup
 	private WebElement accountMenu;
