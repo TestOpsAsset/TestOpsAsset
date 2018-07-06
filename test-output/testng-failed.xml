@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="browser" value="Internet Explorer"/>
-  <test name="test(failed)">
-    <parameter name="browser" value="Internet Explorer"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.frontEndApp_Scripts.AdminProcess">
         <methods>
-          <include name="quitBrowser"/>
-          <include name="HealthChecks"/>
-          <include name="back"/>
           <include name="login"/>
-          <include name="settingBrowser"/>
         </methods>
       </class> <!-- com.frontEndApp_Scripts.AdminProcess -->
+      <class name="com.frontEndApp_Scripts.MainProcess">
+        <methods>
+          <include name="signIn"/>
+        </methods>
+      </class> <!-- com.frontEndApp_Scripts.MainProcess -->
     </classes>
-  </test> <!-- test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

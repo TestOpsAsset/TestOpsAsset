@@ -13,13 +13,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
+//---- Constructor declaration
+	public HomePage (WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		
+	}	
 	private  WebDriver driver;
 	
-	@FindBy (id="account-menu")
-	@CacheLookup
-	private WebElement accountMenu;
 	
-	@FindBy(id="login")
+	@FindBy(xpath="//*[@id=\"headerLinks\"]/div[1]/a")
 	@CacheLookup
 	private WebElement signIn;
 	
@@ -31,7 +34,7 @@ public class HomePage {
 	@CacheLookup
 	private WebElement password;
 	
-	@FindBy(xpath="html/body/div[1]/div/div/div[2]/div/div[3]/form/button")
+	@FindBy(xpath="//*[@id=\"wcm-login-container\"]/tbody/tr/td[1]/div/fieldset/a/img")
 	@CacheLookup
 	private WebElement signInButton;
 	
@@ -39,36 +42,25 @@ public class HomePage {
 	@CacheLookup
 	private WebElement logOut;
 	
-	//---- Constructor declaration
-	public HomePage (WebDriver driver){
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-		
-	}	
-		
-	/*
-	 * Actions that will be executed using above values
-	 */
 	
 	public String logIn(String user, String pwd){
 		
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-		accountMenu.click();
+		//driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
+		//accountMenu.click();
 		signIn.click();
 		username.sendKeys(user);
 		password.sendKeys(pwd);
 		signInButton.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
-		//System.out.println(actual);
-		return actual;  // The actual value will be send back to the method who consumes logIn method
+		String actual = driver.findElement(By.xpath("//*[@id=\"usrlogoutcurrent\"]")).getText();
+		System.out.println(actual);
+		return actual; 
 	}
 	
 	public String logOutApp(){
-		
-		accountMenu.click();
+		//accountMenu.click();
 		logOut.click();
-		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div[2]/a")).getText();
+		String actual = driver.findElement(By.xpath("//*[@id=\"frm_logout\"]/div[1]/a[2]")).getText();
 		return actual;
 		
 	}

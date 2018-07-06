@@ -3,7 +3,7 @@
 <suite name="Suite"> <!--  For parallel testing add this line (parallel="tests") -->
 
  <test name="test_Chrome">
- <parameter name="browser" value="Firefox"></parameter>
+ <parameter name="browser" value="Chrome"></parameter>
  	<classes>
  		<!--<class name="com.frontEndApp_Scripts.MainProcess"/>-->
  		<class name="com.frontEndApp_Scripts.AdminProcess"/>
