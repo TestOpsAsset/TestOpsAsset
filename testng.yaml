@@ -1,0 +1,8 @@
+name: Suite
+configFailurePolicy: skip
+tests:
+  - name: test_Chrome
+    parameters: { browser: Chrome }
+    classes:
+      - com.frontEndApp_Scripts.ngoMainProcess
+

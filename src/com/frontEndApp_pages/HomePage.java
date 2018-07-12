@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -31,6 +32,20 @@ public class HomePage {
 	 @FindBy (xpath="//*[@id=\'frm_logout\']/div[2]/div/a[2]")
 	 @CacheLookup
 	 private WebElement logout;
+	 
+	 //---Pagination
+	 @FindBy (xpath="//*[@id=\"wcm-left180\"]/div[4]/ul[1]/li[1]/a")
+	 @CacheLookup
+	 private WebElement opordering;
+	
+	 @FindBy (xpath="//*[@id=\"menu-link-catalog-search\"]")
+	 @CacheLookup
+	 private WebElement opcatalog;
+	 
+	 @FindBy (xpath="/html/body")
+	 @CacheLookup
+	 private WebElement container;
+	 
 
 	
 	//---- Constructor declaration
@@ -51,9 +66,27 @@ public class HomePage {
 		passwordUser.sendKeys(pwd);
 		signInButton.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		String actual = "Successfully logged in";//driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
-		//System.out.println(actual);
-		return actual;  // The actual value will be send back to the method who consumes logIn method
+		String actual = "Successfully logged in";
+		return actual;  
+	}
+	public String paginationNGO(){
+		opordering.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		Actions actions = new Actions(driver);
+		WebElement mainMenu = driver.findElement(By.xpath("/html/body"));
+		WebElement mainMenu2 = driver.findElement(By.xpath("/html/body/main"));
+		actions.moveToElement(mainMenu).moveToElement(mainMenu2).perform();
+		mainMenu2.findElement(By.linkText("//a[text()='Catalog']")).click();
+		System.out.println("\"-----Passed--------------");
+
+		
+		opcatalog.click();
+		System.out.println("opcatalog");
+		String actual = "ordering";
+		System.out.println(actual);
+		return actual;
+		
 	}
 	
 	public String logOutApp(){
