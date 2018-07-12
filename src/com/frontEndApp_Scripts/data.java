@@ -14,7 +14,7 @@ public class data {
 	//public static final String skytap ="https://cloud.skytap.com/vms/e7a95d9060731b51368a061d05086569/desktops?sort=name&thumbnails=shown&view=html5";
 	public static final String Chrome1="webdriver.chrome.driver";
 	//public static final String Chrome2=	"G://TestOps//TestOpsAsset/chromedriver.exe";
-	public static final String Chrome2= "C://Users//l.enriquez.rodriguez//OneDrive - Accenture//McKesson Files//Automation//chromedriver_win32//chromedriver.exe";
+	public static final String Chrome2= "C://Users/maria.cadena/eclipse-workspace/chromedriver.exe";
 	
 	//public static final String Chrome2="/opt/selenium/chromedriver";
 	

@@ -3,7 +3,6 @@ package com.frontEndApp_Scripts;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.frontEndApp_pages.ConfigCheckPage;
 import com.frontEndApp_pages.HealthChecksPage;
 import com.frontEndApp_pages.HomePage;
 import com.frontEndApp_pages.MetricsCheckPage;

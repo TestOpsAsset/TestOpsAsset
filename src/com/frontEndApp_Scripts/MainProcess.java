@@ -40,7 +40,7 @@ public class MainProcess extends setBrowser{
 		System.out.println("-------------------------------------");
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}		
-	@Test (priority=4)
+	@Test (priority=4) 
 	public void listofUsers(){
 		ListofUsersPage userlist = new ListofUsersPage(driver);
 		Boolean actual= userlist.createListofUsers();
