@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <parameter name="browser" value="Internet Explorer"/>
-  <test name="test(failed)">
-    <parameter name="browser" value="Internet Explorer"/>
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="test_Chrome(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="com.frontEndApp_Scripts.AdminProcess">
         <methods>
-          <include name="quitBrowser"/>
+          <include name="outofclass"/>
           <include name="HealthChecks"/>
-          <include name="back"/>
+          <include name="MetricsCheck"/>
           <include name="login"/>
           <include name="settingBrowser"/>
         </methods>
       </class> <!-- com.frontEndApp_Scripts.AdminProcess -->
     </classes>
-  </test> <!-- test(failed) -->
+  </test> <!-- test_Chrome(failed) -->
 </suite> <!-- Failed suite [Suite] -->

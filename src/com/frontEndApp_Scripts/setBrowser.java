@@ -21,9 +21,6 @@ import org.testng.annotations.Parameters;
 
 import com.frontEndApp_pages.HomePage;
 
-
-
-
 public class setBrowser {
 	WebDriver driver;
 	

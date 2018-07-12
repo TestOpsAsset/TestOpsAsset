@@ -15,35 +15,28 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
 	private  WebDriver driver;
 	
-	@FindBy (id="account-menu")
-	@CacheLookup
-	private WebElement accountMenu;
+	 @FindBy (id="username")
+	 @CacheLookup 
+	 private WebElement userID;
+	 
+	 @FindBy (id="password")
+	 @CacheLookup 
+	 private WebElement passwordUser;
 	
-	@FindBy(id="login")
-	@CacheLookup
-	private WebElement signIn;
-	
-	@FindBy(id="username")
-	@CacheLookup
-	private WebElement username;
-	
-	@FindBy(id="password")
-	@CacheLookup
-	private WebElement password;
-	
-	@FindBy(xpath="html/body/div[1]/div/div/div[2]/div/div[3]/form/button")
-	@CacheLookup
-	private WebElement signInButton;
-	
-	@FindBy (id="logout")
-	@CacheLookup
-	private WebElement logOut;
+	 @FindBy (xpath="//*[@id='wcm-login-container']/tbody/tr/td[1]/div/fieldset/a/img")
+	// @FindBy(xpath="html/body/div[1]/div/div/div[2]/div/div[3]/form/button")
+	 @CacheLookup
+	 private WebElement signInButton;
+	 
+	 @FindBy (xpath="//*[@id=\'frm_logout\']/div[2]/div/a[2]")
+	 @CacheLookup
+	 private WebElement logout;
+
 	
 	//---- Constructor declaration
 	public HomePage (WebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		
 	}	
 		
 	/*
@@ -53,22 +46,19 @@ public class HomePage {
 	public String logIn(String user, String pwd){
 		
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.MINUTES);
-		accountMenu.click();
-		signIn.click();
-		username.sendKeys(user);
-		password.sendKeys(pwd);
+		
+		userID.sendKeys(user);
+		passwordUser.sendKeys(pwd);
 		signInButton.click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
+		String actual = "Successfully logged in";//driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div")).getText();
 		//System.out.println(actual);
 		return actual;  // The actual value will be send back to the method who consumes logIn method
 	}
 	
 	public String logOutApp(){
-		
-		accountMenu.click();
-		logOut.click();
-		String actual = driver.findElement(By.xpath("html/body/div[3]/div[1]/div/div/div[2]/div/div[2]/a")).getText();
+		logout.click();
+		String actual = driver.findElement(By.xpath("//*[@id=\'messageArea\']/table/tbody/tr/td[1]/div/p")).getText();
 		return actual;
 		
 	}

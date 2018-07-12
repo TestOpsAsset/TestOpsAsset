@@ -4,17 +4,18 @@ public class data {
 	/* 
 	 * Login Data
 	 */
-	public static final String User = "admin";
-	public static final String pwd = "admin";
+	public static final String User = "qang06";
+	public static final String pwd = "Password3";
 	
 	/*
 	 * SetBrowser Data
 	 */
-	public static final String appURL  ="http://199.204.220.122:8080/#/";
-	public static final String skytap ="https://cloud.skytap.com/vms/e7a95d9060731b51368a061d05086569/desktops?sort=name&thumbnails=shown&view=html5";
+	public static final String appURL  ="https://testwcm.mckesson.com/portal/site/smo/template.LOGIN/?logout=success";
+	//public static final String skytap ="https://cloud.skytap.com/vms/e7a95d9060731b51368a061d05086569/desktops?sort=name&thumbnails=shown&view=html5";
 	public static final String Chrome1="webdriver.chrome.driver";
 	//public static final String Chrome2=	"G://TestOps//TestOpsAsset/chromedriver.exe";
-	public static final String Chrome2= "C://Users//l.enriquez.rodriguez//Documents//Eclipse Projects//chromedriver.exe";
+	public static final String Chrome2= "C://Users//l.enriquez.rodriguez//OneDrive - Accenture//McKesson Files//Automation//chromedriver_win32//chromedriver.exe";
+	
 	//public static final String Chrome2="/opt/selenium/chromedriver";
 	
 	
